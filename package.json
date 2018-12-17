@@ -1,0 +1,19 @@
+{
+  "name": "astuterestaurants",
+  "version": "1.0.0",
+  "description": "Astute Ordering system",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NaeemAhmad4442/AstuteRestaurants.git"
+  },
+  "author": "Astute Softwares",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NaeemAhmad4442/AstuteRestaurants/issues"
+  },
+  "homepage": "https://github.com/NaeemAhmad4442/AstuteRestaurants#readme"
+}
