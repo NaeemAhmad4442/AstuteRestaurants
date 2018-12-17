@@ -4,7 +4,9 @@
   "description": "Astute Ordering system",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "start-server": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,15 @@
   "bugs": {
     "url": "https://github.com/NaeemAhmad4442/AstuteRestaurants/issues"
   },
-  "homepage": "https://github.com/NaeemAhmad4442/AstuteRestaurants#readme"
+  "homepage": "https://github.com/NaeemAhmad4442/AstuteRestaurants#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongodb": "^3.1.10",
+    "mongoose": "^5.4.0"
+  }
 }
