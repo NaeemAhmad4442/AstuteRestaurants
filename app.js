@@ -1,5 +1,6 @@
 // Imported to make path - This gives directory name in default
 const path = require('path');
+const mongoose = require('mongoose');
 // Express Node Js Packet, to ease the Nodejs functionalities
 const express = require('express');
 // Body Parser to read data from body in parsed way
@@ -23,8 +24,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 // // Directing towards error controller
 // app.use(errorController.get404);
 // Starting App
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 8000;
-}
-app.listen(port);
+mongoose.connect('mongodb+srv://naeem:cattog123@cluster0-0xnj0.mongodb.net/astuterestaurants?retryWrites=true')
+.then(result => {
+  app.listen(3000);
+})
+.catch(err => {
+  console.log(err);
+});
+// let port = process.env.PORT;
+// if (port == null || port == "") {
+//   port = 8000;
+// }
+// app.listen(port);
