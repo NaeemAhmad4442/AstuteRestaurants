@@ -15,7 +15,7 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 // Importing admin and shop routes from routes folder
 const indexRoute = require('./routes/index');
-
+app.use(compression());
 // Using body parser for every request
 app.use(bodyParser.urlencoded({ extended: false }));
 // Allowing public folder containing assets to be accessed globally
