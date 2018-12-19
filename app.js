@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const User = require('./models/user');
 // Express Node Js Packet, to ease the Nodejs functionalities
 const express = require('express');
+const compression = require('compression');
 // Body Parser to read data from body in parsed way
 const bodyParser = require('body-parser');
 // Requiring controller for fetching errors
