@@ -10,6 +10,9 @@ const bodyParser = require('body-parser');
 const errorController = require('./controllers/error');
 // Using express function to initialize
 const app = express();
+const MONGODB_URI = `mongodb+srv://${process.env.MONGO_USER}:${
+  process.env.MONGO_PASSWORD
+}@cluster0-ntrwp.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}`;
 //Setting express engine to ejs, this will look into the views folder and search for ejs files and will convert them into html
 app.set('view engine', 'ejs');
 app.set('views', 'views');
@@ -39,23 +42,34 @@ app.use(errorController.get404);
 //   port = 8000;
 // }
 // app.listen(port);
-mongoose.connect('mongodb+srv://naeem:cattog123@cluster0-0xnj0.mongodb.net/webapp?retryWrites=true')
-.then(result => {
-  User.findOne().then(user => {
-    if(!user){
-      const user = new User({
-        firstName: 'Ahmad',
-        lastName: 'Naeem',
-        email: 'naeem.4442@gmail.com',
-        password: 'cattog123',
-        pin: '4444',
-        phoneNumer: '3339969892'
-      });
-      user.save();
-    }
+// mongoose.connect('mongodb+srv://naeem:cattog123@cluster0-0xnj0.mongodb.net/webapp?retryWrites=true')
+// .then(result => {
+//   User.findOne().then(user => {
+//     if(!user){
+//       const user = new User({
+//         firstName: 'Ahmad',
+//         lastName: 'Naeem',
+//         email: 'naeem.4442@gmail.com',
+//         password: 'cattog123',
+//         pin: '4444',
+//         phoneNumer: '3339969892'
+//       });
+//       user.save();
+//     }
+//   });
+//   app.listen(3000);
+// })
+// .catch(err => {
+//   console.log(err);
+// });
+mongoose
+  .connect(MONGODB_URI)
+  .then(result => {
+    // https
+    //   .createServer({ key: privateKey, cert: certificate }, app)
+    //   .listen(process.env.PORT || 3000);
+      app.listen(process.env.PORT || 3000);
+  })
+  .catch(err => {
+    console.log(err);
   });
-  app.listen(3000);
-})
-.catch(err => {
-  console.log(err);
-});
